@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portfolio prabhu kumar</title>
+<link rel="stylesheet" href="style.css" />
+<style>
+   @import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+  body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Arial', sans-serif;
+      background-color: #f4f4f4;
+      color: #333;
+  }
+  .container {
+            width: 80%;
+            margin: auto;
+            overflow: hidden;
+        }
+
+  .page {
+   
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      padding: 20px;
+      margin: 20px;
+  }
+
+  h1 {
+      margin: 0;
+      font-size: 36px;
+      color: #333333;
+  }
+
+  span {
+      font-size: 24px;
+      font-weight: bold;
+      color: #555555;
+  }
+
+  p {
+      font-size: 18px;
+      color: black;
+  }
+
+  .profile-img {
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .resume-btn {
+      display: inline-block;
+      padding: 10px 20px;
+      font-size: 18px;
+      color: #ffffff;
+      background-color: #a76a00;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      text-decoration: none;
+      margin-top: 20px;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+
+  .resume-btn:hover {
+      background-color: #bcc2c8;
+      transform: translateY(-2px);
+  }
+  .star {
+            position: absolute;
+            width: 15px;
+            height: 15px;
+            background-color: rgb(11, 54, 210);
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: fall linear infinite;
+        }
+
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        /* Generate multiple stars */
+        @keyframes fall {
+            0% {
+                transform: translateY(-100px) rotate(0deg);
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .star:nth-child(2) {
+            left: 20%;
+            animation-duration: 4s;
+            animation-delay: 1s;
+        }
+
+        .star:nth-child(3) {
+            left: 40%;
+            animation-duration: 5s;
+            animation-delay: 2s;
+        }
+
+        .star:nth-child(4) {
+            left: 60%;
+            animation-duration: 3.5s;
+            animation-delay: 1.5s;
+        }
+
+        .star:nth-child(5) {
+            left: 80%;
+            animation-duration: 4.5s;
+            animation-delay: 3s;
+        }
+        .about{
+          align-items: top;
+        }
+        .profile-image11 {
+  float: right;
+  margin-left: 20px;
+  width: 150px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(139, 69, 19, 0.8), 0 0 20px rgba(101, 67, 33, 0.8); /* Dark brown and wood brown shadow */
+  border: 2px solid #daba01; /* Light orange border */
+}
+
+h1 .script-font {
+            font-family: 'Great Vibes', cursive; /* Handwritten script font */
+            margin-left: 10px; /* Add some space between "Hello, I'm" and the name */
+            color: #8b4513;
+        }
+
+        p, span {
+            font-family: 'Playfair Display', serif; /* Serif font for text */
+            color: #4b2e2e;
+        }
+        .project-box {
+    background-color: #fff3e0;
+    border: 2px solid #cd853f;
+    padding: 20px;
+    margin: 10px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    transition: transform 0.2s;
+    width: 200px; /* Set the width */
+    height: 200px; /* Set the height */
+    display: inline-block; /* Make them appear next to each other */
+    text-align: center; /* Center text */
+}
+
+.project-box:hover {
+    transform: scale(1.05);
+}
+
+.project-title {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #8b4513;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%; /* Ensure vertical alignment */
+}
+
+.project-popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #fff;
+    padding: 20px;
+    border: 2px solid #cd853f;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 10px;
+    z-index: 1000;
+}
+
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.close-btn {
+    background-color: #cd853f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.next-page-btn {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    background-color: #cd853f;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    cursor: pointer;
+    border-radius: 5px;
+    font-family: 'Times New Roman', Times, serif;
+}
+.skills__content {
+    margin-top: 20px;
+}
+
+.skills__title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 15px;
+}
+
+.skills__box {
+    display: flex;
+    justify-content: space-between;
+}
+
+.skills__group {
+    flex: 1;
+    padding: 0 10px;
+}
+
+.skills__data {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.skills__data i {
+    font-size: 20px;
+    margin-right: 10px;
+    color: #007bff; /* or any color you prefer */
+}
+
+.skills__name {
+    font-size: 18px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.skills__level {
+    font-size: 14px;
+    color: #533838;
+}
+
+/* Optional: Add hover effect */
+.skills__data:hover {
+    background-color: #f4f4f4; /* or any other color */
+    border-radius: 5px;
+}
+.form-container {
+      background-color: #fff3e0;
+      border: 2px solid #cd853f;
+      padding: 20px;
+      margin: 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      max-width: 400px;
+    }
+    .form-container label {
+      font-family: 'Times New Roman', Times, serif;
+      color: #4b2e2e;
+      display: block;
+      margin-bottom: 8px;
+    }
+    .form-container input, .form-container textarea {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border: 1px solid #cd853f;
+      border-radius: 5px;
+      box-sizing: border-box;
+    }
+    .form-container button {
+      background-color: #cd853f;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      cursor: pointer;
+      border-radius: 5px;
+    }
+    .form-container button:hover {
+      background-color: #8b4513;
+    }
+    .wrapper {
+      display: flex;
+      justify-content: space-around;
+      margin-top: 12px;
+    }
+    .wrapper .button {
+      display: flex;
+      align-items: center;
+      height: 60px;
+      width: 60px;
+      margin: 0 5px;
+      overflow: hidden;
+      background: #fff;
+      border-radius: 50%;
+      cursor: pointer;
+      box-shadow: 0px 10px 10px #000;
+      transition: all 0.3s ease-out;
+      position: relative;
+    }
+    .wrapper .button .icon {
+      height: 50px;
+      width: 50px;
+      text-align: center;
+      border-radius: 50%;
+      box-sizing: border-box;
+      line-height: 60px;
+      transition: all 0.3s ease-out;
+      position: relative;
+      z-index: 2;
+    }
+    .wrapper .button .icon i {
+      font-size: 25px;
+      transition: all 0.3s ease-out;
+    }
+    .wrapper .button span {
+      display: none;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 60px;
+      margin-left: 10px;
+      position: absolute;
+      left: 70px;
+      white-space: nowrap;
+      z-index: 1;
+    }
+    .wrapper .button:hover {
+      width: 200px;
+    }
+    .wrapper .button:hover span {
+      display: inline-block;
+    }
+    .wrapper .button:nth-child(1):hover .icon {
+      background: #4267B2;
+    }
+    .wrapper .button:nth-child(2):hover .icon {
+      background: #1DA1F2;
+    }
+    .wrapper .button:nth-child(3):hover .icon {
+      background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+    .wrapper .button:nth-child(4):hover .icon {
+      background: #333;
+    }
+    .wrapper .button:nth-child(5):hover .icon {
+      background: #ff0000;
+    }
+    .wrapper .button:hover .icon i {
+      color: #fff;
+    }
+</style>
+</head>
+<body>
+<div class="motive">
+  
+  
+  </h2>
+</div>
+
+<div class="book">
+  <div class="page cover-front" onclick="movePage(this, 1)" >
+ 
+   
+      <h1>  Embark on a journey through my professional endeavors, 
+        where I'll share insights into my skills, experiences, and projects.
+
+    </h1>
+        
+    <div class="hat"><i class="fab fa-pied-piper-hat"></i></div>
+ 
+  </div>
+  <div class="page cover-front" onclick="movePage(this, 2)"></div>
+  <div class="page text-page" onclick="movePage(this, 3)"  style="
+  background: radial-gradient(ellipse at center, rgb(219, 200, 175) 25%, rgba(139, 69, 19, 0.9) 70%, rgba(101, 67, 33, 1) 100%);
+color: #4b2e2e; /* Dark brown color for text */
+font-family: 'Times New Roman', Times, serif; /* Classic serif font */
+
+border: 2px solid gold; /* Gold border */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(105, 105, 105, 0.5); /* Dark shadow */
+border-radius: 5px; /* Slightly rounded corners */
+
+text-align: justify; /* Justify text for a neat look */
+">
+
+    <img src="prabhu2.jpg" alt="Profile Picture" class="profile-img">
+        <p>
+            <h1 style=" font-family: 'Playfair Display', serif; /* Professional serif font */
+            font-size: 48px; /* Adjust size as needed */
+            font-weight: 700; /* Bold weight for emphasis */
+            color: #B8860B; /* Dark gold color */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4); /* Subtle shadow for depth */
+
+            
+            
+">Hello, I'm</h1>
+            <span id="name">prabhu kumar</span>
+        </p>
+       
+        <a href="https://drive.google.com/file/d/1xPws93m_9qLoOKG2oPyFZrRS55T7WDq4/view?usp=drive_link" target="_blank" class="resume-btn">Read My Resume</a>
+        <p>Turn the page to know more...</p>
+       
+</div>
+<div class="page text-page" onclick="movePage(this, 4)" style="
+      background: radial-gradient(ellipse at center, rgb(241, 202, 151) 25%, rgb(139, 69, 19) 70%, rgba(101, 67, 33, 1) 100%);
+  color: #4b2e2e; /* Dark brown color for text */
+  font-family: 'Times New Roman', Times, serif; /* Classic serif font */
+ 
+  border: 2px solid gold; /* Gold border */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(105, 105, 105, 0.5); /* Dark shadow */
+  border-radius: 5px; /* Slightly rounded corners */
+
+  text-align: justify; /* Justify text for a neat look */
+">
+  <span class="about" style="color: #4b2e2e;">About me</span> <br>
+  <div class="content">
+    <p style="color: #602a03; font-family: Arial, Helvetica, sans-serif; font-style: oblique;">I am Prabhu Kumar Kondapalli, pursuing a Bachelor's 
+    in Computer Science and Engineering at the Vellore Institute of Technology. 
+    I have based myself on Software Development and have an acute interest in Web 
+    Technologies. I have experience and rich knowledge about various programming 
+    languages and frameworks through my academic and project works. My urge to create 
+    innovative, efficient solutions has fostered continuous learning of the industry 
+    and best practices.</p>
+    
+    <img src="prabhu1.jpg" alt="Prabhu Kumar Kondapalli" class="profile-image11">
+    
+    <p style="color: #602a03; font-family: Arial, Helvetica, sans-serif; font-style: oblique;">Apart from that, I also like playing outdoor games, which help 
+    in boosting my team-working and strategic skills. I am eager to use all the knowledge 
+    I have acquired and work on some great projects in these technological fields.</p>
+  </div>
+</div>
+
+
+<div class="page text-page" onclick="movePage(this, 5)" style="
+background: radial-gradient(ellipse at center, rgb(241, 202, 151) 25%, rgba(139, 69, 19, 0.9) 70%, rgba(101, 67, 33, 1) 100%);
+color: #4b2e2e; /* Dark brown color for text */
+font-family: 'Times New Roman', Times, serif; /* Classic serif font */
+
+border: 2px solid gold; /* Gold border */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(105, 105, 105, 0.5); /* Dark shadow */
+border-radius: 5px; /* Slightly rounded corners */
+
+text-align: justify; /* Justify text for a neat look */
+">
+  <h2>Projects</h2>
+
+  <div class="project-box" onclick="showPopup('popup1')">
+      <h3 class="project-title">Advance Home Automation</h3>
+  </div>
+  <div id="popup1" class="project-popup">
+      <h3>Advance Home Automation</h3>
+      <p>t will help the owners by automatically on and off the lights, fans
+        and motor. Automatic rotated solar panel.</p>
+        <a href="https://github.com/dashboard">GitHub</a>
+
+      <button class="close-btn" onclick="closePopup('popup1')">Close</button>
+  </div>
+
+  <div class="project-box" onclick="showPopup('popup2')">
+      <h3 class="project-title">Student Management</h3>
+  </div>
+  <div id="popup2" class="project-popup">
+      <h3>Student Management</h3>
+      <p>A project for Java Full Stack Internship by IamNeo Company which
+        helps in retrieiving and add data of students. </p>
+        <a href="https://github.com/dashboard">GitHub</a>
+
+      <button class="close-btn" onclick="closePopup('popup2')">Close</button>
+  </div>
+
+  <div class="project-box" onclick="showPopup('popup3')">
+      <h3 class="project-title">Gym Website</h3>
+  </div>
+  <div id="popup3" class="project-popup">
+      <h3>Gym Website</h3>
+      <p>Developed a dynamic gym website with distinct interfaces for
+        administrators, coaches, and students, enabling user registration,
+        login, and personalized dashboards. Features such as body detail
+        tracking, exercise plans, dietary information, and class schedules.
+        Ensured role-specific functionalities, empowering coaches to
+        update student profiles and granting administrators full platform
+        control. </p>
+        <a href="https://github.com/dashboard">GitHub</a>
+
+      <button class="close-btn" onclick="closePopup('popup3')">Close</button>
+  </div>
+  
+  
+</div>
+  <div class="page text-page" onclick="movePage(this, 6)" style="
+  background: radial-gradient(ellipse at center, rgb(241, 202, 151) 25%, rgb(139, 69, 19) 70%, rgba(101, 67, 33, 1) 100%);
+color: #4b2e2e; /* Dark brown color for text */
+font-family: 'Times New Roman', Times, serif; /* Classic serif font */
+
+border: 2px solid gold; /* Gold border */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(105, 105, 105, 0.5); /* Dark shadow */
+border-radius: 5px; /* Slightly rounded corners */
+
+text-align: justify; /* Justify text for a neat look */
+">
+    <h1>Skills</h1>
+  
+    <div class="skills__content" data-sr-id="13">
+      <h3 class="skills__title">Technical Skills</h3>
+  
+      <div class="skills__box">
+        <div class="skills__group">
+          <div class="skills__data">
+            <img src="java-icon.png" alt="Java Logo">
+            <div>
+              <h3 class="skills__name">Java</h3>
+              <span class="skills__level">  Advanced</span>
+            </div>
+          </div>
+          
+          <div class="skills__data">
+            <img src="dsa.png" alt="dsa Logo">
+            <div>
+              <h3 class="skills__name">Java Dsa</h3>
+              <span class="skills__level">  Advanced</span>
+            </div>
+          </div>
+          
+          <div class="skills__data">
+            <img src="mysql.png" alt="MySQL Logo">
+            <div>
+              <h3 class="skills__name">MySQL</h3>
+              <span class="skills__level">Basic</span>
+            </div>
+          </div>
+        </div>
+  
+        <div class="skills__group">
+          <div class="skills__data">
+            <img src="php.png" alt="PHP Logo">
+            <div>
+              <h3 class="skills__name">PHP</h3>
+              <span class="skills__level">Basic</span>
+            </div>
+          </div>
+  
+          <div class="skills__data">
+            <img src="html.png" alt="HTML/CSS Logo">
+            <div>
+              <h3 class="skills__name">HTML/CSS</h3>
+              <span class="skills__level">   Intermediate</span>
+            </div>
+          </div>
+  
+          <div class="skills__data">
+            <img src="js.png" alt="JavaScript Logo">
+            <div>
+              <h3 class="skills__name">JavaScript</h3>
+              <span class="skills__level">Basic</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+ 
+   
+  </div>
+  <div id="education" class="page text-page" onclick="movePage(this, 7)" style="
+  background: radial-gradient(ellipse at center, rgb(241, 202, 151) 25%, rgb(139, 69, 19) 70%, rgba(101, 67, 33, 1) 100%);
+color: #4b2e2e; /* Dark brown color for text */
+font-family: 'Times New Roman', Times, serif; /* Classic serif font */
+
+border: 2px solid gold; /* Gold border */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(105, 105, 105, 0.5); /* Dark shadow */
+border-radius: 5px; /* Slightly rounded corners */
+
+text-align: justify; /* Justify text for a neat look */
+">
+
+    <div class="skills__content" data-sr-id="13" style="visibility: visible; opacity: 1; transform: matrix3d(1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1); transition: opacity 2.5s cubic-bezier(0.5, 0, 0, 1) 0.1s, transform 2.5s cubic-bezier(0.5, 0, 0, 1) 0.1s;">
+      <h3 class="skills__title" style="align-items: center; color: black;  font-weight: bold ">Soft Skills</h3>
+
+      <div class="skills__box">
+        <div class="skills__group">
+            <div class="skills__data">
+                <img src="lb.jpg" alt="Logic Building Logo"> <!-- Add logo image -->
+                <div>
+                    <h3 class="skills__name">Logic Building</h3>
+                    <span class="skills__level">Intermediate</span>
+                </div>
+            </div>
+    
+            <div class="skills__data">
+                <img src="dt.png" alt="Design Thinking Logo"> <!-- Add logo image -->
+                <div>
+                    <h3 class="skills__name">Design Thinking</h3>
+                    <span class="skills__level">Advanced</span>
+                </div>
+            </div>
+    
+            <div class="skills__data">
+                <img src="dm.jpg" alt="Decision Making Logo"> <!-- Add logo image -->
+                <div>
+                    <h3 class="skills__name">Decision-Making</h3>
+                    <span class="skills__level">Basic</span>
+                </div>
+            </div>
+    
+        </div>
+        <div class="skills__group">
+            <div class="skills__data">
+                <img src="ps.jpg" alt="Problem Solving Logo"> <!-- Add logo image -->
+                <div>
+                    <h3 class="skills__name">Problem Solving</h3>
+                    <span class="skills__level">Intermediate</span>
+                </div>
+            </div>
+    
+            <div class="skills__data">
+                <img src="bs.jpg" alt="Brainstorming Logo" > <!-- Add logo image -->
+                <div>
+                    <h3 class="skills__name">Brainstorming</h3>
+                    <span class="skills__level">Basic</span>
+                </div>
+            </div>
+    
+            <div class="skills__data">
+                <img src="p.jpg" alt="Patience Logo"> <!-- Add logo image -->
+                <div>
+                    <h3 class="skills__name">Patience</h3>
+                    <span class="skills__level">Intermediate</span>
+                </div>
+            </div>
+    
+     
+   
+
+          </div>
+      </div>
+  </div>
+
+
+
+
+
+
+   
+  </div>
+  <div class="page text-page" onclick="movePage(this, 8)" style="
+  background: radial-gradient(ellipse at center, rgb(241, 202, 151) 25%, rgb(139, 69, 19) 70%, rgba(101, 67, 33, 1) 100%);
+color: #4b2e2e; /* Dark brown color for text */
+font-family: 'Times New Roman', Times, serif; /* Classic serif font */
+
+border: 2px solid gold; /* Gold border */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(105, 105, 105, 0.5); /* Dark shadow */
+border-radius: 5px; /* Slightly rounded corners */
+
+text-align: justify; /* Justify text for a neat look */
+">
+    <h2>Education</h2>
+    <h3><u>Degree and Institution</u></h3>
+    <p>
+      Bachelor of Technology 
+      Vellore Institute of Technology,Amaravati 
+      12/2021 - Present  
+      <p style="font-weight:  bold;"><u>Course</u> <br/>
+        Computer Science and
+         Engineering </p>
+    </p>
+    <h3><u>(XII)Higher Secondary Certification</u></h3>
+    <p>Bhashyam Junior College <br/>
+      06/2019 - 03/202</p> 
+      <p style="font-weight: bold ;color:  black;"><u>Courses </u> </p> 
+      <p>Maths,Physics,Chemistry</p>
+  </div>
+  <div class="page text-page" style="
+  background: radial-gradient(ellipse at center, rgb(241, 202, 151) 25%, rgb(139, 69, 19) 70%, rgba(101, 67, 33, 1) 100%);
+color: #4b2e2e; /* Dark brown color for text */
+font-family: 'Times New Roman', Times, serif; /* Classic serif font */
+
+border: 2px solid gold; /* Gold border */
+box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5), 0 0 20px rgba(105, 105, 105, 0.5); /* Dark shadow */
+border-radius: 5px; /* Slightly rounded corners */
+
+text-align: justify; /* Justify text for a neat look */
+">
+    <h2>Contact me</h2>
+    <div class="form-container">
+      <form onsubmit="showAlert(); return false;">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+  
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" required>
+  
+        <label for="message">Message:</label>
+        <textarea id="message" name="message" rows="4" required></textarea>
+  
+        <button type="submit">Send</button>
+      </form>
+      <h2 style="text-align: center;">Talk to me</h2>
+    <div class="wrapper">
+      <div class="button">
+        <div class="icon">
+          <a href="https://wa.me/919391112410?text=Hello%20there!%20I%20would%20like%20to%20contact%20you" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+          </a>
+        </div>
+        <span>WhatsApp</span>
+      </div>
+      <div class="button">
+        <div class="icon">
+            <a href="https://www.linkedin.com/in/kondapalli-prabhu-kumar-724746284/?trk=public-profile-join-page" target="_blank">
+                <i class="fab fa-linkedin"></i>
+            </a>
+        </div>
+        <span>LinkedIn</span>
+    </div>
+
+      <div class="button">
+         <div class="icon">
+            <a href="https://www.instagram.com/prabhu_kumar_82" target="_blank">
+              <i class="fab fa-instagram"></i>
+            </a>
+         </div>
+         <span>Instagram</span>
+      </div>
+      <div class="button">
+         <div class="icon">
+            <a href="https://github.com/prabhukumark" target="_blank">
+              <i class="fab fa-github"></i>
+            </a>
+         </div>
+         <span>github</span>
+      </div> 
+   
+     
+    </div>
+    
+    </div>
+    <footer>
+      <p>&copy; 2024 Prabhu Kumar. All rights reserved.</p>
+      <p>For more information, contact: kprabhukumar594@gmail.com</p>
+    </footer>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+  </div>
+  <div class="page text-page" onclick="movePage(this, 10)">
+  </div>
+  <div class="page text-page">
+   
+  </div>
+  <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+      <div class="page"></div>
+</div>
+<script>
+   function showAlert() {
+      alert("Message sent!");
+    }
+  function showPopup(popupId) {
+      document.getElementById(popupId).style.display = 'block';
+      document.getElementById('popup-overlay').style.display = 'block';
+  }
+
+  function closePopup(popupId) {
+      document.getElementById(popupId).style.display = 'none';
+      document.getElementById('popup-overlay').style.display = 'none';
+  }
+
+  function closeAllPopups() {
+      var popups = document.querySelectorAll('.project-popup');
+      popups.forEach(function(popup) {
+          popup.style.display = 'none';
+      });
+      document.getElementById('popup-overlay').style.display = 'none';
+  }
+</script>
+<script>
+  function movePage(page, pageNumber) {
+    // Add functionality to print contents one by one when clicking the first page
+    if (pageNumber === 1) {
+      const content = document.querySelector('.page.cover-front h1');
+      let index = 0;
+      const text = content.textContent.trim().split('');
+      content.textContent = '';
+
+      function printText() {
+        if (index < text.length) {
+          content.textContent += text[index];
+          index++;
+          setTimeout(printText, 50);
+        }
+      }
+
+      printText();
+    } else {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach((pg, idx) => {
+        if (idx < pageNumber) {
+          pg.style.transform = `rotateY(-180deg)`;
+        } else {
+          pg.style.transform = `rotateY(0deg)`;
+        }
+      });
+    }
+  }
+
+  document.getElementById("contactButton").addEventListener("click", function () {
+    alert("Thank you for reaching out! Please drop a message.");
+  });
+</script>
+<script>
+  function movePage(element, pageNumber) {
+      console.log('Moving to page ' + pageNumber);
+  }
+
+  const nameElement = document.getElementById('name');
+  const text1 = 'prabhu kumar';
+  const text2 = 'software developer';
+  let textArray = [];
+  let index = 0;
+  let isAdding = true;
+  let isRemoving = false;
+  let intervalTime = 200;
+
+  function updateText() {
+      nameElement.textContent = textArray.join('');
+  }
+
+  function typeEffect(text) {
+      if (isAdding) {
+          if (index < text.length) {
+              textArray.push(text[index]);
+              index++;
+              updateText();
+          } else {
+              isAdding = false;
+              isRemoving = true;
+              setTimeout(() => typeEffect(text), 1000);  // Pause before starting to remove
+              return;
+          }
+      } else if (isRemoving) {
+          if (index > 0) {
+              textArray.pop();
+              index--;
+              updateText();
+          } else {
+              isRemoving = false;
+              isAdding = true;
+              textArray = [];
+              index = 0;
+              return;
+          }
+      }
+
+      setTimeout(() => typeEffect(text), intervalTime);
+  }
+
+  function startCycle() {
+      typeEffect(text1);
+      setTimeout(() => {
+          typeEffect(text2);
+          setTimeout(startCycle, text2.length * intervalTime * 2 + 2000);  // Adjust timing for pause between cycles
+      }, text1.length * intervalTime * 2 + 2000);
+  }
+
+  startCycle();
+</script>
+
+<script src="untoldcoding.js"></script>
+</body>
+</html>
+
